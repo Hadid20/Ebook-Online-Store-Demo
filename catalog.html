@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catalog - E-Book Store</title>
+    <link href="./src/output.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .book-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+      .filter-sidebar {
+        max-height: calc(100vh - 200px);
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <a
+            href="index.html"
+            class="font-bold text-2xl text-gray-800 flex items-center gap-2"
+          >
+            <i class="fas fa-book text-blue-600"></i>
+            E-Book Store
+          </a>
+          <nav class="hidden md:flex gap-6">
+            <a href="index.html" class="text-gray-700 hover:text-blue-600"
+              >Home</a
+            >
+            <a href="catalog.html" class="text-blue-600 font-semibold"
+              >Catalog</a
+            >
+            <a href="index.html#about" class="text-gray-700 hover:text-blue-600"
+              >About</a
+            >
+            <a
+              href="index.html#contact"
+              class="text-gray-700 hover:text-blue-600"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Search books..."
+                class="pl-10 pr-4 py-2 border rounded-lg w-64 focus:ring-2 focus:ring-blue-500"
+              />
+              <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            </div>
+            <button class="relative p-2 text-gray-700 hover:text-blue-600">
+              <i class="fas fa-shopping-cart text-xl"></i>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                >3</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center text-sm text-gray-600">
+          <a href="index.html" class="hover:text-blue-600">Home</a>
+          <i class="fas fa-chevron-right mx-2 text-gray-400"></i>
+          <span class="text-gray-800">Catalog</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Sidebar Filters -->
+        <div class="lg:w-1/4">
+          <div class="bg-white rounded-lg shadow-md p-6 filter-sidebar">
+            <h3 class="font-bold text-lg mb-4">Filters</h3>
+
+            <!-- Category Filter -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Categories</h4>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2 text-blue-600" />
+                  <span class="text-sm">All Categories (48)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2 text-blue-600" />
+                  <span class="text-sm">Business (12)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2 text-blue-600" />
+                  <span class="text-sm">Technology (15)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2 text-blue-600" />
+                  <span class="text-sm">Education (8)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2 text-blue-600" />
+                  <span class="text-sm">Self-Help (9)</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2 text-blue-600" />
+                  <span class="text-sm">Fiction (4)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Price Filter -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Price Range</h4>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="radio" name="price" class="mr-2" />
+                  <span class="text-sm">Under $ 15</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="price" class="mr-2" />
+                  <span class="text-sm">$ 15 - 25</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="price" class="mr-2" />
+                  <span class="text-sm">$ 25 - 35</span>
+                </label>
+                <label class="flex items-center">
+                  <input type="radio" name="price" class="mr-2" />
+                  <span class="text-sm">Over $ 35</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Rating Filter -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Rating</h4>
+              <div class="space-y-2">
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2" />
+                  <div class="flex items-center">
+                    <span class="text-yellow-400">★★★★★</span>
+                    <span class="text-sm ml-2">(5)</span>
+                  </div>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2" />
+                  <div class="flex items-center">
+                    <span class="text-yellow-400">★★★★</span
+                    ><span class="text-gray-300">★</span>
+                    <span class="text-sm ml-2">(8)</span>
+                  </div>
+                </label>
+                <label class="flex items-center">
+                  <input type="checkbox" class="mr-2" />
+                  <div class="flex items-center">
+                    <span class="text-yellow-400">★★★</span
+                    ><span class="text-gray-300">★★</span>
+                    <span class="text-sm ml-2">(3)</span>
+                  </div>
+                </label>
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Apply Filters
+            </button>
+          </div>
+        </div>
+
+        <!-- Books Grid -->
+        <div class="lg:w-3/4">
+          <!-- Sort and View Options -->
+          <div class="bg-white rounded-lg shadow-md p-4 mb-6">
+            <div
+              class="flex flex-col sm:flex-row justify-between items-center gap-4"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-gray-600">Showing 48 books</span>
+                <select class="border rounded px-3 py-1 text-sm">
+                  <option>Sort by: Newest</option>
+                  <option>Sort by: Price Low to High</option>
+                  <option>Sort by: Price High to Low</option>
+                  <option>Sort by: Rating</option>
+                  <option>Sort by: Popular</option>
+                </select>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="p-2 bg-blue-600 text-white rounded">
+                  <i class="fas fa-th-large"></i>
+                </button>
+                <button class="p-2 text-gray-600 hover:bg-gray-100 rounded">
+                  <i class="fas fa-list"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Books Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Book Item 1 -->
+            <div
+              class="book-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Book Cover"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-3 left-3">
+                  <span
+                    class="bg-red-500 text-white px-2 py-1 rounded text-xs font-semibold"
+                    >Bestseller</span
+                  >
+                </div>
+                <div class="absolute top-3 right-3">
+                  <button class="bg-white/80 hover:bg-white p-2 rounded-full">
+                    <i
+                      class="far fa-heart text-gray-600 hover:text-red-500"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="text-sm text-blue-600 mb-1">Business</div>
+                <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                  Digital Marketing Complete Guide 2024
+                </h3>
+                <p class="text-gray-600 text-sm mb-2">by Sarah Johnson</p>
+                <div class="flex items-center mb-3">
+                  <div class="text-yellow-400 text-sm">★★★★★</div>
+                  <span class="text-gray-500 text-sm ml-2">(124 reviews)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-blue-600">$ 25</span>
+                    <span class="text-gray-500 line-through text-sm ml-2"
+                      >$ 35</span
+                    >
+                  </div>
+                  <a
+                    href="book-detail.html"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm"
+                  >
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book Item 2 -->
+            <div
+              class="book-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Book Cover"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-3 right-3">
+                  <button class="bg-white/80 hover:bg-white p-2 rounded-full">
+                    <i
+                      class="far fa-heart text-gray-600 hover:text-red-500"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="text-sm text-blue-600 mb-1">Technology</div>
+                <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                  Python Programming for Beginners
+                </h3>
+                <p class="text-gray-600 text-sm mb-2">by Alex Chen</p>
+                <div class="flex items-center mb-3">
+                  <div class="text-yellow-400 text-sm">★★★★★</div>
+                  <span class="text-gray-500 text-sm ml-2">(89 reviews)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-blue-600">$ 30</span>
+                  </div>
+                  <a
+                    href="book-detail.html"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm"
+                  >
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book Item 3 -->
+            <div
+              class="book-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Book Cover"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-3 left-3">
+                  <span
+                    class="bg-green-500 text-white px-2 py-1 rounded text-xs font-semibold"
+                    >New</span
+                  >
+                </div>
+                <div class="absolute top-3 right-3">
+                  <button class="bg-white/80 hover:bg-white p-2 rounded-full">
+                    <i
+                      class="far fa-heart text-gray-600 hover:text-red-500"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="text-sm text-blue-600 mb-1">Self-Help</div>
+                <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                  Financial Freedom Blueprint
+                </h3>
+                <p class="text-gray-600 text-sm mb-2">by David Kim</p>
+                <div class="flex items-center mb-3">
+                  <div class="text-yellow-400 text-sm">★★★★</div>
+                  <span class="text-gray-300">★</span>
+                  <span class="text-gray-500 text-sm ml-2">(156 reviews)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-blue-600">$ 20</span>
+                    <span class="text-gray-500 line-through text-sm ml-2"
+                      >$ 28</span
+                    >
+                  </div>
+                  <a
+                    href="book-detail.html"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm"
+                  >
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book Item 4 -->
+            <div
+              class="book-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Book Cover"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-3 right-3">
+                  <button class="bg-white/80 hover:bg-white p-2 rounded-full">
+                    <i
+                      class="far fa-heart text-gray-600 hover:text-red-500"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="text-sm text-blue-600 mb-1">Design</div>
+                <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                  Web Design Fundamentals
+                </h3>
+                <p class="text-gray-600 text-sm mb-2">by Maria Garcia</p>
+                <div class="flex items-center mb-3">
+                  <div class="text-yellow-400 text-sm">★★★★★</div>
+                  <span class="text-gray-500 text-sm ml-2">(203 reviews)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-blue-600">$ 35</span>
+                  </div>
+                  <a
+                    href="book-detail.html"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm"
+                  >
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book Item 5 -->
+            <div
+              class="book-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Book Cover"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-3 right-3">
+                  <button class="bg-white/80 hover:bg-white p-2 rounded-full">
+                    <i
+                      class="far fa-heart text-gray-600 hover:text-red-500"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="text-sm text-blue-600 mb-1">Health</div>
+                <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                  Mindfulness & Meditation Guide
+                </h3>
+                <p class="text-gray-600 text-sm mb-2">by Dr. Lisa Wong</p>
+                <div class="flex items-center mb-3">
+                  <div class="text-yellow-400 text-sm">★★★★★</div>
+                  <span class="text-gray-500 text-sm ml-2">(67 reviews)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-blue-600">$ 18</span>
+                    <span class="text-gray-500 line-through text-sm ml-2"
+                      >$ 25</span
+                    >
+                  </div>
+                  <a
+                    href="book-detail.html"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm"
+                  >
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Book Item 6 -->
+            <div
+              class="book-card bg-white rounded-lg shadow-md overflow-hidden"
+            >
+              <div class="relative">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Book Cover"
+                  class="w-full h-64 object-cover"
+                />
+                <div class="absolute top-3 left-3">
+                  <span
+                    class="bg-red-500 text-white px-2 py-1 rounded text-xs font-semibold"
+                    >Hot</span
+                  >
+                </div>
+                <div class="absolute top-3 right-3">
+                  <button class="bg-white/80 hover:bg-white p-2 rounded-full">
+                    <i
+                      class="far fa-heart text-gray-600 hover:text-red-500"
+                    ></i>
+                  </button>
+                </div>
+              </div>
+              <div class="p-4">
+                <div class="text-sm text-blue-600 mb-1">Education</div>
+                <h3 class="font-semibold text-lg mb-2 line-clamp-2">
+                  Learn React.js in 30 Days
+                </h3>
+                <p class="text-gray-600 text-sm mb-2">by John Smith</p>
+                <div class="flex items-center mb-3">
+                  <div class="text-yellow-400 text-sm">★★★★</div>
+                  <span class="text-gray-300">★</span>
+                  <span class="text-gray-500 text-sm ml-2">(91 reviews)</span>
+                </div>
+                <div class="flex items-center justify-between">
+                  <div>
+                    <span class="text-2xl font-bold text-blue-600">$ 32</span>
+                  </div>
+                  <a
+                    href="book-detail.html"
+                    class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors text-sm"
+                  >
+                    View Details
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <div class="mt-12 flex justify-center">
+            <nav class="flex items-center space-x-2">
+              <button class="px-3 py-2 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="px-3 py-2 bg-blue-600 text-white rounded">
+                1
+              </button>
+              <button class="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                2
+              </button>
+              <button class="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                3
+              </button>
+              <span class="px-3 py-2 text-gray-500">...</span>
+              <button class="px-3 py-2 text-gray-700 hover:bg-gray-100 rounded">
+                8
+              </button>
+              <button class="px-3 py-2 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p>&copy; 2024 E-Book Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Book Store - Digital Books at Great Prices</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .book-card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease;
+      }
+      .testimonial-card {
+        background: linear-gradient(145deg, #f0f0f0, #ffffff);
+        box-shadow: 5px 5px 10px #d1d1d1, -5px -5px 10px #ffffff;
+      }
+    </style>
+    <link href="./src/output.css" rel="stylesheet" />
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="text-center py-6">
+          <h1
+            class="font-bold text-3xl text-gray-800 flex items-center justify-center gap-2"
+          >
+            <i class="fas fa-book text-blue-600"></i>
+            E-Book Store
+          </h1>
+          <p class="text-gray-600 mt-2">Your Digital Library Destination</p>
+        </div>
+        <hr class="w-2/3 mx-auto border-gray-200" />
+
+        <!-- Navigation -->
+        <nav class="w-full py-4">
+          <div class="flex flex-wrap gap-8 justify-center">
+            <a
+              href="#home"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >Home</a
+            >
+            <a
+              href="#catalog"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >Featured eBooks</a
+            >
+            <a
+              href="./catalog.html"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >Catalog</a
+            >
+            <a
+              href="#testimonials"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >Testimonials</a
+            >
+            <a
+              href="#how-to-buy"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >How to Buy?</a
+            >
+            <a
+              href="#about"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >About</a
+            >
+            <a
+              href="#contact"
+              class="text-gray-700 hover:text-blue-600 font-medium transition-colors duration-200"
+              >Contact</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white py-20">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col lg:flex-row items-center justify-between gap-12"
+        >
+          <div class="lg:w-1/2 text-center lg:text-left">
+            <h1 class="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+              Cheap & Quality Digital eBook Store
+            </h1>
+            <p class="text-xl lg:text-2xl mb-8 text-gray-100">
+              Find educational and inspiring eBooks starting at just $1!
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                href="#catalog"
+                class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200"
+              >
+                View Catalog
+              </a>
+              <a
+                href="#how-to-buy"
+                class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-200"
+              >
+                How to Purchase
+              </a>
+            </div>
+          </div>
+          <div class="lg:w-1/2 flex justify-center">
+            <div class="relative">
+              <img
+                src="./aset/image/Book.png"
+                alt="Digital Books Collection"
+                class="rounded-lg shadow-2xl"
+              />
+              <div
+                class="absolute -top-4 -right-4 bg-yellow-400 text-gray-800 px-4 py-2 rounded-full font-bold"
+              >
+                50% OFF
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Popular Categories
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+          >
+            <i class="fas fa-graduation-cap text-4xl text-blue-600 mb-4"></i>
+            <h3 class="font-semibold text-gray-800">Education</h3>
+            <p class="text-gray-600 text-sm">120+ Books</p>
+          </div>
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+          >
+            <i class="fas fa-briefcase text-4xl text-green-600 mb-4"></i>
+            <h3 class="font-semibold text-gray-800">Business</h3>
+            <p class="text-gray-600 text-sm">85+ Books</p>
+          </div>
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+          >
+            <i class="fas fa-heart text-4xl text-red-600 mb-4"></i>
+            <h3 class="font-semibold text-gray-800">Self-Help</h3>
+            <p class="text-gray-600 text-sm">95+ Books</p>
+          </div>
+          <div
+            class="text-center p-6 bg-gray-50 rounded-lg hover:bg-blue-50 transition-colors duration-200"
+          >
+            <i class="fas fa-code text-4xl text-pu$le-600 mb-4"></i>
+            <h3 class="font-semibold text-gray-800">Technology</h3>
+            <p class="text-gray-600 text-sm">75+ Books</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Books -->
+    <section id="catalog" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Featured eBooks
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Book 1 -->
+          <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="./aset/image/Book.png"
+              alt="Book Cover"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">
+                Digital Marketing Mastery
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Complete guide to digital marketing strategies
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-blue-600">$ 25</span>
+                <a
+                  href="./book-detail.html"
+                  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Buy Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book 2 -->
+          <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="./aset/image/Book.png"
+              alt="Book Cover"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">Python Programming</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Learn Python from beginner to advanced
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-blue-600">$ 30</span>
+                <a
+                  href="./book-detail.html"
+                  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Buy Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book 3 -->
+          <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="./aset/image/Book.png"
+              alt="Book Cover"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">Financial Freedom</h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Your path to financial independence
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-blue-600">$ 20</span>
+                <a
+                  href="./book-detail.html"
+                  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Buy Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Book 4 -->
+          <div class="book-card bg-white rounded-lg shadow-md overflow-hidden">
+            <img
+              src="./aset/image/Book.png"
+              alt="Book Cover"
+              class="w-full h-64 object-cover"
+            />
+            <div class="p-6">
+              <h3 class="font-semibold text-lg mb-2">
+                Web Design Fundamentals
+              </h3>
+              <p class="text-gray-600 text-sm mb-4">
+                Master the art of web design
+              </p>
+              <div class="flex justify-between items-center">
+                <span class="text-2xl font-bold text-blue-600">$ 35</span>
+                <a
+                  href="./book-detail.html"
+                  class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors duration-200"
+                >
+                  Buy Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-12">
+          <a
+            href="./catalog.html"
+            class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-200"
+          >
+            View All Books
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Buy Section -->
+    <section id="how-to-buy" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          How to Buy?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold text-blue-600">1</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Choose Your Book</h3>
+            <p class="text-gray-600">
+              Browse our catalog and select the eBook you want to purchase
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold text-blue-600">2</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Make Payment</h3>
+            <p class="text-gray-600">
+              Complete your purchase using various payment methods available
+            </p>
+          </div>
+          <div class="text-center">
+            <div
+              class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <span class="text-2xl font-bold text-blue-600">3</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Download & Read</h3>
+            <p class="text-gray-600">
+              Get instant access to your eBook and start reading immediately
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          What Our Customers Say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="testimonial-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="/placeholder.svg?height=50&width=50"
+                alt="Customer"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold">Sarah Johnson</h4>
+                <div class="text-yellow-500">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Amazing collection of books at very affordable prices. The
+              download process is instant and the quality is excellent!"
+            </p>
+          </div>
+          <div class="testimonial-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="/placeholder.svg?height=50&width=50"
+                alt="Customer"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold">Ahmad Rahman</h4>
+                <div class="text-yellow-500">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Sangat membantu untuk pembelajaran. Harga terjangkau dan koleksi
+              bukunya lengkap. Highly recommended!"
+            </p>
+          </div>
+          <div class="testimonial-card p-6 rounded-lg">
+            <div class="flex items-center mb-4">
+              <img
+                src="/placeholder.svg?height=50&width=50"
+                alt="Customer"
+                class="w-12 h-12 rounded-full mr-4"
+              />
+              <div>
+                <h4 class="font-semibold">Maria Garcia</h4>
+                <div class="text-yellow-500">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-gray-600">
+              "Great platform for digital books. Easy to navigate, secure
+              payment, and excellent customer service."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-bold mb-8 text-gray-800">
+            About E-Book Store
+          </h2>
+          <p class="text-lg text-gray-600 mb-8">
+            We are dedicated to making quality digital books accessible to
+            everyone. Our mission is to provide affordable, high-quality eBooks
+            that inspire learning and personal growth. With over 500+ titles
+            across various categories, we're your one-stop destination for
+            digital reading.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div class="text-center">
+              <h3 class="text-3xl font-bold text-blue-600 mb-2">500+</h3>
+              <p class="text-gray-600">eBooks Available</p>
+            </div>
+            <div class="text-center">
+              <h3 class="text-3xl font-bold text-blue-600 mb-2">10,000+</h3>
+              <p class="text-gray-600">Happy Customers</p>
+            </div>
+            <div class="text-center">
+              <h3 class="text-3xl font-bold text-blue-600 mb-2">24/7</h3>
+              <p class="text-gray-600">Customer Support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Contact Us
+        </h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div>
+            <h3 class="text-xl font-semibold mb-6">Get in Touch</h3>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <i class="fas fa-envelope text-blue-600 w-6"></i>
+                <span class="ml-3">support@ebookstore.com</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-phone text-blue-600 w-6"></i>
+                <span class="ml-3">+62 123 456 7890</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-map-marker-alt text-blue-600 w-6"></i>
+                <span class="ml-3">Jakarta, Indonesia</span>
+              </div>
+            </div>
+            <div class="mt-8">
+              <h4 class="font-semibold mb-4">Follow Us</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="text-blue-600 hover:text-blue-800"
+                  ><i class="fab fa-facebook text-2xl"></i
+                ></a>
+                <a href="#" class="text-blue-600 hover:text-blue-800"
+                  ><i class="fab fa-twitter text-2xl"></i
+                ></a>
+                <a href="#" class="text-blue-600 hover:text-blue-800"
+                  ><i class="fab fa-instagram text-2xl"></i
+                ></a>
+                <a href="#" class="text-blue-600 hover:text-blue-800"
+                  ><i class="fab fa-linkedin text-2xl"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div>
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Name</label
+                >
+                <input
+                  type="text"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="font-bold text-xl mb-4 flex items-center gap-2">
+              <i class="fas fa-book text-blue-400"></i>
+              E-Book Store
+            </h3>
+            <p class="text-gray-400">
+              Your trusted partner for quality digital books at affordable
+              prices.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Quick Links</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#home" class="hover:text-white">Home</a></li>
+              <li><a href="#catalog" class="hover:text-white">Catalog</a></li>
+              <li><a href="#about" class="hover:text-white">About</a></li>
+              <li><a href="#contact" class="hover:text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Categories</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Education</a></li>
+              <li><a href="#" class="hover:text-white">Business</a></li>
+              <li><a href="#" class="hover:text-white">Technology</a></li>
+              <li><a href="#" class="hover:text-white">Self-Help</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Support</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Help Center</a></li>
+              <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+              <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+              <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+            </ul>
+          </div>
+        </div>
+        <hr class="border-gray-700 my-8" />
+        <div class="text-center text-gray-400">
+          <p>&copy; 2024 E-Book Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Smooth Scrolling Script -->
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add scroll effect to navigation
+      window.addEventListener("scroll", function () {
+        const header = document.querySelector("header");
+        if (window.scrollY > 100) {
+          header.classList.add("shadow-lg");
+        } else {
+          header.classList.remove("shadow-lg");
+        }
+      });
+    </script>
+  </body>
+</html>

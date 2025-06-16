@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment - E-Book Store</title>
+    <link href="./src/output.css" rel="stylesheet" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .payment-method.active {
+        border-color: #3b82f6;
+        background-color: #eff6ff;
+      }
+      .step-indicator.active {
+        background-color: #3b82f6;
+        color: white;
+      }
+      .step-indicator.completed {
+        background-color: #10b981;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <a
+            href="index.html"
+            class="font-bold text-2xl text-gray-800 flex items-center gap-2"
+          >
+            <i class="fas fa-book text-blue-600"></i>
+            E-Book Store
+          </a>
+          <div class="text-sm text-gray-600">
+            <i class="fas fa-lock text-green-600 mr-1"></i>
+            Secure Checkout
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Progress Steps -->
+    <div class="bg-white border-b">
+      <div class="container mx-auto px-4 py-6">
+        <div class="flex items-center justify-center max-w-2xl mx-auto">
+          <div class="flex items-center">
+            <div
+              class="step-indicator completed w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold"
+            >
+              <i class="fas fa-check"></i>
+            </div>
+            <span class="ml-2 text-sm font-medium text-gray-700">Cart</span>
+          </div>
+          <div class="flex-1 h-px bg-gray-300 mx-4"></div>
+          <div class="flex items-center">
+            <div
+              class="step-indicator active w-8 h-8 rounded-full flex items-center justify-center text-sm font-semibold"
+            >
+              2
+            </div>
+            <span class="ml-2 text-sm font-medium text-gray-700">Payment</span>
+          </div>
+          <div class="flex-1 h-px bg-gray-300 mx-4"></div>
+          <div class="flex items-center">
+            <div
+              class="step-indicator w-8 h-8 rounded-full bg-gray-300 flex items-center justify-center text-sm font-semibold text-gray-600"
+            >
+              3
+            </div>
+            <span class="ml-2 text-sm font-medium text-gray-500">Complete</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Payment Form -->
+        <div class="lg:col-span-2 space-y-6">
+          <!-- Customer Information -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-6">Customer Information</h2>
+            <form class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >First Name *</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Last Name *</label
+                  >
+                  <input
+                    type="text"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Email Address *</label
+                >
+                <input
+                  type="email"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                />
+              </div>
+            </form>
+          </div>
+
+          <!-- Payment Method -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold mb-6">Payment Method</h2>
+            <div class="space-y-4">
+              <!-- Credit Card -->
+              <div
+                class="payment-method border-2 rounded-lg p-4 cursor-pointer active"
+                onclick="selectPaymentMethod(this, 'credit-card')"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <i class="fas fa-credit-card text-xl text-blue-600"></i>
+                    <div>
+                      <h3 class="font-semibold">Credit/Debit Card</h3>
+                      <p class="text-sm text-gray-600">
+                        Pay with Visa, Mastercard, or American Express
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-2">
+                    <img
+                      src="/placeholder.svg?height=24&width=38"
+                      alt="Visa"
+                      class="h-6"
+                    />
+                    <img
+                      src="/placeholder.svg?height=24&width=38"
+                      alt="Mastercard"
+                      class="h-6"
+                    />
+                  </div>
+                </div>
+                <div id="credit-card-form" class="mt-4 space-y-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >Card Number</label
+                    >
+                    <input
+                      type="text"
+                      placeholder="1234 5678 9012 3456"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-700 mb-2"
+                        >Expiry Date</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="MM/YY"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-700 mb-2"
+                        >CVV</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="123"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Bank Transfer -->
+              <div
+                class="payment-method border-2 border-gray-200 rounded-lg p-4 cursor-pointer"
+                onclick="selectPaymentMethod(this, 'bank-transfer')"
+              >
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-university text-xl text-green-600"></i>
+                  <div>
+                    <h3 class="font-semibold">Bank Transfer</h3>
+                    <p class="text-sm text-gray-600">
+                      Transfer directly to our bank account
+                    </p>
+                  </div>
+                </div>
+                <div id="bank-transfer-form" class="mt-4 space-y-4 hidden">
+                  <div class="bg-gray-50 p-4 rounded-lg">
+                    <h4 class="font-semibold mb-2">Bank Account Details:</h4>
+                    <div class="space-y-1 text-sm">
+                      <p><strong>Bank:</strong> Bank Central Asia (BCA)</p>
+                      <p><strong>Account Number:</strong> 1234567890</p>
+                      <p>
+                        <strong>Account Name:</strong> E-Book Store Indonesia
+                      </p>
+                    </div>
+                  </div>
+                  <p class="text-sm text-orange-600">
+                    <i class="fas fa-info-circle mr-1"></i>
+                    Please upload payment proof after transfer
+                  </p>
+                </div>
+              </div>
+
+              <!-- E-Wallet -->
+              <div
+                class="payment-method border-2 border-gray-200 rounded-lg p-4 cursor-pointer"
+                onclick="selectPaymentMethod(this, 'ewallet')"
+              >
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-3">
+                    <i class="fas fa-mobile-alt text-xl text-pu$le-600"></i>
+                    <div>
+                      <h3 class="font-semibold">E-Wallet</h3>
+                      <p class="text-sm text-gray-600">
+                        Pay with GoPay, OVO, DANA, or ShopeePay
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex gap-2">
+                    <div
+                      class="w-8 h-8 bg-green-500 rounded flex items-center justify-center text-white text-xs font-bold"
+                    >
+                      GO
+                    </div>
+                    <div
+                      class="w-8 h-8 bg-pu$le-500 rounded flex items-center justify-center text-white text-xs font-bold"
+                    >
+                      OVO
+                    </div>
+                    <div
+                      class="w-8 h-8 bg-blue-500 rounded flex items-center justify-center text-white text-xs font-bold"
+                    >
+                      DANA
+                    </div>
+                  </div>
+                </div>
+                <div id="ewallet-form" class="mt-4 space-y-4 hidden">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >Select E-Wallet</label
+                    >
+                    <select
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    >
+                      <option>Choose E-Wallet</option>
+                      <option>GoPay</option>
+                      <option>OVO</option>
+                      <option>DANA</option>
+                      <option>ShopeePay</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2"
+                      >Phone Number</label
+                    >
+                    <input
+                      type="tel"
+                      placeholder="08xxxxxxxxxx"
+                      class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- QRIS -->
+              <div
+                class="payment-method border-2 border-gray-200 rounded-lg p-4 cursor-pointer"
+                onclick="selectPaymentMethod(this, 'qris')"
+              >
+                <div class="flex items-center gap-3">
+                  <i class="fas fa-qrcode text-xl text-red-600"></i>
+                  <div>
+                    <h3 class="font-semibold">QRIS</h3>
+                    <p class="text-sm text-gray-600">
+                      Scan QR code to pay instantly
+                    </p>
+                  </div>
+                </div>
+                <div id="qris-form" class="mt-4 space-y-4 hidden">
+                  <div class="text-center">
+                    <div class="bg-gray-100 p-4 rounded-lg inline-block">
+                      <img
+                        src="/placeholder.svg?height=200&width=200"
+                        alt="QR Code"
+                        class="w-48 h-48"
+                      />
+                    </div>
+                    <p class="text-sm text-gray-600 mt-2">
+                      Scan this QR code with any banking app or e-wallet
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Billing Address -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <div class="flex items-center justify-between mb-4">
+              <h2 class="text-xl font-semibold">Billing Address</h2>
+              <label class="flex items-center">
+                <input type="checkbox" class="mr-2" checked />
+                <span class="text-sm">Same as customer information</span>
+              </label>
+            </div>
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Country</label
+                >
+                <select
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                >
+                  <option>Indonesia</option>
+                  <option>Malaysia</option>
+                  <option>Singapore</option>
+                </select>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >City</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Postal Code</label
+                  >
+                  <input
+                    type="text"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Address</label
+                >
+                <textarea
+                  rows="3"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Order Summary -->
+        <div class="lg:col-span-1">
+          <div class="bg-white rounded-lg shadow-md p-6 sticky top-6">
+            <h2 class="text-xl font-semibold mb-6">Order Summary</h2>
+
+            <!-- Order Items -->
+            <div class="space-y-4 mb-6">
+              <div class="flex gap-4">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Book Cover"
+                  class="w-15 h-20 object-cover rounded"
+                />
+                <div class="flex-1">
+                  <h3 class="font-semibold text-sm mb-1">
+                    Digital Marketing Complete Guide 2024
+                  </h3>
+                  <p class="text-gray-600 text-xs mb-2">by Sarah Johnson</p>
+                  <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-600">Qty: 1</span>
+                    <span class="font-semibold">$ 25</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Promo Code -->
+            <div class="mb-6">
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  placeholder="Promo code"
+                  class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                />
+                <button
+                  class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg text-sm hover:bg-gray-200"
+                >
+                  Apply
+                </button>
+              </div>
+            </div>
+
+            <!-- Order Total -->
+            <div class="border-t pt-4 space-y-2">
+              <div class="flex justify-between text-sm">
+                <span>Subtotal</span>
+                <span>$ 25</span>
+              </div>
+              <div class="flex justify-between text-sm text-green-600">
+                <span>Discount</span>
+                <span>-$ 10</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span>Tax (11%)</span>
+                <span>$ 1.650</span>
+              </div>
+              <div
+                class="border-t pt-2 flex justify-between font-semibold text-lg"
+              >
+                <span>Total</span>
+                <span class="text-blue-600">$ 16.650</span>
+              </div>
+            </div>
+
+            <!-- Security Info -->
+            <div class="mt-6 p-4 bg-green-50 rounded-lg">
+              <div class="flex items-center gap-2 text-green-700 text-sm">
+                <i class="fas fa-shield-alt"></i>
+                <span class="font-semibold">Secure Payment</span>
+              </div>
+              <p class="text-green-600 text-xs mt-1">
+                Your payment information is encrypted and secure
+              </p>
+            </div>
+
+            <!-- Terms and Complete Order -->
+            <div class="mt-6 space-y-4">
+              <label class="flex items-start gap-2 text-sm">
+                <input type="checkbox" class="mt-1" required />
+                <span class="text-gray-600">
+                  I agree to the
+                  <a href="#" class="text-blue-600 hover:underline"
+                    >Terms of Service</a
+                  >
+                  and
+                  <a href="#" class="text-blue-600 hover:underline"
+                    >Privacy Policy</a
+                  >
+                </span>
+              </label>
+              <button
+                onclick="processPayment()"
+                class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              >
+                Complete Order
+              </button>
+            </div>
+
+            <!-- Money Back Guarantee -->
+            <div class="mt-4 text-center">
+              <div
+                class="flex items-center justify-center gap-2 text-sm text-gray-600"
+              >
+                <i class="fas fa-undo text-green-600"></i>
+                <span>30-day money-back guarantee</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p>&copy; 2024 E-Book Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function selectPaymentMethod(element, method) {
+        // Remove active class from all payment methods
+        const paymentMethods = document.querySelectorAll(".payment-method");
+        paymentMethods.forEach((pm) => {
+          pm.classList.remove("active");
+        });
+
+        // Hide all payment forms
+        const forms = [
+          "credit-card-form",
+          "bank-transfer-form",
+          "ewallet-form",
+          "qris-form",
+        ];
+        forms.forEach((formId) => {
+          const form = document.getElementById(formId);
+          if (form) {
+            form.classList.add("hidden");
+          }
+        });
+
+        // Add active class to selected method
+        element.classList.add("active");
+
+        // Show corresponding form
+        const selectedForm = document.getElementById(method + "-form");
+        if (selectedForm) {
+          selectedForm.classList.remove("hidden");
+        }
+      }
+
+      function processPayment() {
+        // Simulate payment processing
+        const button = event.target;
+        button.disabled = true;
+        button.innerHTML =
+          '<i class="fas fa-spinner fa-spin mr-2"></i>Processing...';
+
+        setTimeout(() => {
+          // Redirect to success page
+          window.location.href = "payment-success.html";
+        }, 3000);
+      }
+
+      // Format card number input
+      document.addEventListener("DOMContentLoaded", function () {
+        const cardNumberInput = document.querySelector(
+          'input[placeholder="1234 5678 9012 3456"]'
+        );
+        if (cardNumberInput) {
+          cardNumberInput.addEventListener("input", function (e) {
+            let value = e.target.value
+              .replace(/\s/g, "")
+              .replace(/[^0-9]/gi, "");
+            let formattedValue = value.match(/.{1,4}/g)?.join(" ") || "";
+            if (formattedValue.length > 19) {
+              formattedValue = formattedValue.substring(0, 19);
+            }
+            e.target.value = formattedValue;
+          });
+        }
+
+        // Format expiry date input
+        const expiryInput = document.querySelector(
+          'input[placeholder="MM/YY"]'
+        );
+        if (expiryInput) {
+          expiryInput.addEventListener("input", function (e) {
+            let value = e.target.value.replace(/\D/g, "");
+            if (value.length >= 2) {
+              value = value.substring(0, 2) + "/" + value.substring(2, 4);
+            }
+            e.target.value = value;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

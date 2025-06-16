@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Successful - E-Book Store</title>
+    <link href="./src/output.css" rel="stylesheet" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .success-animation {
+        animation: bounceIn 0.8s ease-out;
+      }
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.3);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <a
+            href="index.html"
+            class="font-bold text-2xl text-gray-800 flex items-center gap-2"
+          >
+            <i class="fas fa-book text-blue-600"></i>
+            E-Book Store
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Success Content -->
+    <div class="container mx-auto px-4 py-16">
+      <div class="max-w-2xl mx-auto text-center">
+        <!-- Success Icon -->
+        <div class="success-animation mb-8">
+          <div
+            class="w-24 h-24 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6"
+          >
+            <i class="fas fa-check text-white text-4xl"></i>
+          </div>
+          <h1 class="text-3xl font-bold text-gray-900 mb-4">
+            Payment Successful!
+          </h1>
+          <p class="text-lg text-gray-600 mb-8">
+            Thank you for your purchase. Your eBook is now ready for download.
+          </p>
+        </div>
+
+        <!-- Order Details -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8">
+          <h2 class="text-xl font-semibold mb-6">Order Details</h2>
+          <div class="border-b pb-4 mb-4">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-gray-600">Order Number:</span>
+              <span class="font-semibold">#EB-2024-001234</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-gray-600">Payment Method:</span>
+              <span class="font-semibold">Credit Card</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-gray-600">Transaction Date:</span>
+              <span class="font-semibold">December 15, 2024</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-gray-600">Total Amount:</span>
+              <span class="font-semibold text-blue-600">$ 16.650</span>
+            </div>
+          </div>
+
+          <!-- Purchased Item -->
+          <div class="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
+            <img
+              src="./aset/image/Book.png"
+              alt="Book Cover"
+              class="w-15 h-20 object-cover rounded"
+            />
+            <div class="flex-1 text-left">
+              <h3 class="font-semibold mb-1">
+                Digital Marketing Complete Guide 2024
+              </h3>
+              <p class="text-gray-600 text-sm mb-2">by Sarah Johnson</p>
+              <div class="flex items-center gap-2">
+                <span
+                  class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs font-semibold"
+                >
+                  Ready for Download
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="bg-blue-50 rounded-lg p-8 mb-8">
+          <h2 class="text-xl font-semibold text-blue-900 mb-4">
+            Download Your eBook
+          </h2>
+          <p class="text-blue-700 mb-6">
+            Your eBook is ready! Click the button below to download your
+            purchase.
+          </p>
+          <div class="space-y-3">
+            <button
+              class="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center gap-2"
+            >
+              <i class="fas fa-download"></i>
+              Download eBook (PDF - 2.5 MB)
+            </button>
+            <p class="text-sm text-blue-600">
+              <i class="fas fa-info-circle mr-1"></i>
+              Download link will be valid for 30 days
+            </p>
+          </div>
+        </div>
+
+        <!-- Email Receipt -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+          <div
+            class="flex items-center justify-center gap-2 text-green-600 mb-4"
+          >
+            <i class="fas fa-envelope-check"></i>
+            <span class="font-semibold">Receipt Sent</span>
+          </div>
+          <p class="text-gray-600">
+            A receipt and download link have been sent to your email address.
+            Please check your inbox and spam folder.
+          </p>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-gray-900">What's Next?</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a
+              href="catalog.html"
+              class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center"
+            >
+              <i class="fas fa-book text-2xl text-blue-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Browse More Books</h4>
+              <p class="text-sm text-gray-600">
+                Discover more amazing eBooks in our catalog
+              </p>
+            </a>
+            <a
+              href="#"
+              class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center"
+            >
+              <i class="fas fa-star text-2xl text-yellow-500 mb-3"></i>
+              <h4 class="font-semibold mb-2">Rate & Review</h4>
+              <p class="text-sm text-gray-600">
+                Share your experience with other readers
+              </p>
+            </a>
+            <a
+              href="#"
+              class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow text-center"
+            >
+              <i class="fas fa-headset text-2xl text-green-600 mb-3"></i>
+              <h4 class="font-semibold mb-2">Need Help?</h4>
+              <p class="text-sm text-gray-600">
+                Contact our support team anytime
+              </p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Social Sharing -->
+        <div class="mt-12 p-6 bg-gray-100 rounded-lg">
+          <h3 class="font-semibold mb-4">Share Your Purchase</h3>
+          <div class="flex justify-center gap-4">
+            <button
+              class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              <i class="fab fa-facebook-f mr-2"></i>Share
+            </button>
+            <button
+              class="bg-blue-400 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition-colors"
+            >
+              <i class="fab fa-twitter mr-2"></i>Tweet
+            </button>
+            <button
+              class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+            >
+              <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p>&copy; 2024 E-Book Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Auto-download simulation
+      setTimeout(() => {
+        console.log("Auto-download would start here");
+      }, 2000);
+
+      // Add confetti effect (optional)
+      function createConfetti() {
+        for (let i = 0; i < 50; i++) {
+          setTimeout(() => {
+            const confetti = document.createElement("div");
+            confetti.style.position = "fixed";
+            confetti.style.top = "-10px";
+            confetti.style.left = Math.random() * 100 + "vw";
+            confetti.style.width = "10px";
+            confetti.style.height = "10px";
+            confetti.style.backgroundColor = [
+              "#ff6b6b",
+              "#4ecdc4",
+              "#45b7d1",
+              "#96ceb4",
+              "#ffeaa7",
+            ][Math.floor(Math.random() * 5)];
+            confetti.style.pointerEvents = "none";
+            confetti.style.zIndex = "9999";
+            document.body.appendChild(confetti);
+
+            confetti.animate(
+              [
+                { transform: "translateY(-10px) rotate(0deg)", opacity: 1 },
+                { transform: "translateY(100vh) rotate(360deg)", opacity: 0 },
+              ],
+              {
+                duration: 3000,
+                easing: "linear",
+              }
+            ).onfinish = () => confetti.remove();
+          }, i * 100);
+        }
+      }
+
+      // Trigger confetti on page load
+      window.addEventListener("load", createConfetti);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Marketing Complete Guide - E-Book Store</title>
+    <link href="./src/output.css" rel="stylesheet" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .tab-content {
+        display: none;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      .review-stars {
+        display: flex;
+        align-items: center;
+        gap: 2px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="w-full bg-white shadow-sm sticky top-0 z-50">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <a
+            href="index.html"
+            class="font-bold text-2xl text-gray-800 flex items-center gap-2"
+          >
+            <i class="fas fa-book text-blue-600"></i>
+            E-Book Store
+          </a>
+          <nav class="hidden md:flex gap-6">
+            <a href="index.html" class="text-gray-700 hover:text-blue-600"
+              >Home</a
+            >
+            <a href="catalog.html" class="text-gray-700 hover:text-blue-600"
+              >Catalog</a
+            >
+            <a href="index.html#about" class="text-gray-700 hover:text-blue-600"
+              >About</a
+            >
+            <a
+              href="index.html#contact"
+              class="text-gray-700 hover:text-blue-600"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <button class="relative p-2 text-gray-700 hover:text-blue-600">
+              <i class="fas fa-shopping-cart text-xl"></i>
+              <span
+                class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center"
+                >3</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-white border-b">
+      <div class="container mx-auto px-4 py-3">
+        <div class="flex items-center text-sm text-gray-600">
+          <a href="index.html" class="hover:text-blue-600">Home</a>
+          <i class="fas fa-chevron-right mx-2 text-gray-400"></i>
+          <a href="catalog.html" class="hover:text-blue-600">Catalog</a>
+          <i class="fas fa-chevron-right mx-2 text-gray-400"></i>
+          <a href="#" class="hover:text-blue-600">Business</a>
+          <i class="fas fa-chevron-right mx-2 text-gray-400"></i>
+          <span class="text-gray-800">Digital Marketing Complete Guide</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Book Image and Quick Actions -->
+        <div class="lg:col-span-1">
+          <div class="bg-white rounded-lg shadow-md p-6 sticky top-24">
+            <div class="relative mb-6">
+              <img
+                src="./aset/image/Book.png"
+                alt="Digital Marketing Complete Guide"
+                class="w-full rounded-lg shadow-lg"
+              />
+              <div class="absolute top-4 left-4">
+                <span
+                  class="bg-red-500 text-white px-3 py-1 rounded text-sm font-semibold"
+                  >Bestseller</span
+                >
+              </div>
+              <button
+                class="absolute top-4 right-4 bg-white/90 hover:bg-white p-2 rounded-full shadow"
+              >
+                <i class="far fa-heart text-gray-600 hover:text-red-500"></i>
+              </button>
+            </div>
+
+            <!-- Price and Purchase -->
+            <div class="text-center mb-6">
+              <div class="mb-4">
+                <span class="text-4xl font-bold text-blue-600">$ 25</span>
+                <span class="text-gray-500 line-through text-lg ml-2"
+                  >$ 35</span
+                >
+              </div>
+              <div
+                class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm inline-block mb-4"
+              >
+                Save 29% ($ 10)
+              </div>
+              <div class="space-y-3">
+                <button
+                  onclick="addToCart()"
+                  class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+                >
+                  <i class="fas fa-cart-plus mr-2"></i>
+                  Add to Cart
+                </button>
+                <a
+                  href="payment.html"
+                  class="block w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center"
+                >
+                  <i class="fas fa-bolt mr-2"></i>
+                  Buy Now
+                </a>
+              </div>
+            </div>
+
+            <!-- Book Features -->
+            <div class="border-t pt-6">
+              <h4 class="font-semibold mb-4">Book Features</h4>
+              <ul class="space-y-3 text-sm">
+                <li class="flex items-center gap-2">
+                  <i class="fas fa-file-pdf text-red-500"></i>
+                  <span>PDF Format</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fas fa-download text-blue-500"></i>
+                  <span>Instant Download</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fas fa-mobile-alt text-green-500"></i>
+                  <span>Mobile Friendly</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fas fa-infinity text-pu$le-500"></i>
+                  <span>Lifetime Access</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i class="fas fa-shield-alt text-orange-500"></i>
+                  <span>DRM Free</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Book Details -->
+        <div class="lg:col-span-2">
+          <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <!-- Book Header -->
+            <div class="mb-6">
+              <div class="text-blue-600 text-sm font-semibold mb-2">
+                BUSINESS • MARKETING
+              </div>
+              <h1 class="text-3xl font-bold text-gray-900 mb-4">
+                Digital Marketing Complete Guide 2024
+              </h1>
+              <div class="flex items-center gap-4 mb-4">
+                <span class="text-gray-600"
+                  >by
+                  <span class="font-semibold text-gray-800"
+                    >Sarah Johnson</span
+                  ></span
+                >
+                <div class="flex items-center gap-2">
+                  <div class="review-stars">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <i class="fas fa-star text-yellow-400"></i>
+                  </div>
+                  <span class="text-sm text-gray-600">(4.9 • 124 reviews)</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span
+                  class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >250 Pages</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >English</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >Updated 2024</span
+                >
+                <span
+                  class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                  >Beginner Friendly</span
+                >
+              </div>
+            </div>
+
+            <!-- Tabs -->
+            <div class="border-b mb-6">
+              <nav class="flex space-x-8">
+                <button
+                  onclick="showTab('description')"
+                  class="tab-button py-2 border-b-2 border-blue-600 text-blue-600 font-semibold"
+                >
+                  Description
+                </button>
+                <button
+                  onclick="showTab('contents')"
+                  class="tab-button py-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700"
+                >
+                  Table of Contents
+                </button>
+                <button
+                  onclick="showTab('author')"
+                  class="tab-button py-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700"
+                >
+                  About Author
+                </button>
+                <button
+                  onclick="showTab('reviews')"
+                  class="tab-button py-2 border-b-2 border-transparent text-gray-500 hover:text-gray-700"
+                >
+                  Reviews (124)
+                </button>
+              </nav>
+            </div>
+
+            <!-- Tab Contents -->
+            <div id="description" class="tab-content active">
+              <h3 class="text-xl font-semibold mb-4">Book Description</h3>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Master the art of digital marketing with this comprehensive
+                guide that covers everything from social media marketing to SEO,
+                email marketing, and paid advertising. This book is designed for
+                beginners and intermediate marketers who want to build a strong
+                foundation in digital marketing.
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                You'll learn practical strategies that have been tested and
+                proven to work in today's competitive digital landscape. Each
+                chapter includes real-world examples, case studies, and
+                actionable tips that you can implement immediately.
+              </p>
+              <h4 class="font-semibold mb-3">What You'll Learn:</h4>
+              <ul class="list-disc list-inside space-y-2 text-gray-700 mb-6">
+                <li>Fundamentals of digital marketing strategy</li>
+                <li>Social media marketing best practices</li>
+                <li>Search engine optimization (SEO) techniques</li>
+                <li>Email marketing automation</li>
+                <li>Paid advertising on Google and Facebook</li>
+                <li>Content marketing and storytelling</li>
+                <li>Analytics and performance measurement</li>
+                <li>Conversion optimization strategies</li>
+              </ul>
+            </div>
+
+            <div id="contents" class="tab-content">
+              <h3 class="text-xl font-semibold mb-4">Table of Contents</h3>
+              <div class="space-y-3">
+                <div class="border-l-4 border-blue-600 pl-4">
+                  <h4 class="font-semibold">
+                    Chapter 1: Introduction to Digital Marketing
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    Understanding the digital landscape • Key concepts • Setting
+                    goals
+                  </p>
+                </div>
+                <div class="border-l-4 border-gray-300 pl-4">
+                  <h4 class="font-semibold">
+                    Chapter 2: Building Your Digital Marketing Strategy
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    Target audience research • Competitive analysis • Channel
+                    selection
+                  </p>
+                </div>
+                <div class="border-l-4 border-gray-300 pl-4">
+                  <h4 class="font-semibold">
+                    Chapter 3: Social Media Marketing
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    Platform-specific strategies • Content creation • Community
+                    building
+                  </p>
+                </div>
+                <div class="border-l-4 border-gray-300 pl-4">
+                  <h4 class="font-semibold">
+                    Chapter 4: Search Engine Optimization
+                  </h4>
+                  <p class="text-gray-600 text-sm">
+                    Keyword research • On-page SEO • Link building strategies
+                  </p>
+                </div>
+                <div class="border-l-4 border-gray-300 pl-4">
+                  <h4 class="font-semibold">Chapter 5: Email Marketing</h4>
+                  <p class="text-gray-600 text-sm">
+                    List building • Automation • Campaign optimization
+                  </p>
+                </div>
+                <div class="border-l-4 border-gray-300 pl-4">
+                  <h4 class="font-semibold">Chapter 6: Paid Advertising</h4>
+                  <p class="text-gray-600 text-sm">
+                    Google Ads • Facebook Ads • Budget optimization
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div id="author" class="tab-content">
+              <h3 class="text-xl font-semibold mb-4">About the Author</h3>
+              <div class="flex items-start gap-4 mb-4">
+                <img
+                  src="/placeholder.svg?height=100&width=100"
+                  alt="Sarah Johnson"
+                  class="w-20 h-20 rounded-full"
+                />
+                <div>
+                  <h4 class="font-semibold text-lg">Sarah Johnson</h4>
+                  <p class="text-blue-600 mb-2">Digital Marketing Expert</p>
+                  <div class="flex items-center gap-4 text-sm text-gray-600">
+                    <span><i class="fas fa-book mr-1"></i> 12 Books</span>
+                    <span><i class="fas fa-star mr-1"></i> 4.8 Rating</span>
+                    <span><i class="fas fa-users mr-1"></i> 50K+ Students</span>
+                  </div>
+                </div>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Sarah Johnson is a renowned digital marketing strategist with
+                over 10 years of experience helping businesses grow their online
+                presence. She has worked with Fortune 500 companies and startups
+                alike, developing comprehensive digital marketing strategies
+                that drive results.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                As a sought-after speaker and consultant, Sarah has shared her
+                expertise at major industry conferences and has been featured in
+                leading marketing publications. Her practical, results-driven
+                approach has helped thousands of marketers advance their careers
+                and achieve their business goals.
+              </p>
+            </div>
+
+            <div id="reviews" class="tab-content">
+              <h3 class="text-xl font-semibold mb-4">Customer Reviews</h3>
+
+              <!-- Review Summary -->
+              <div class="bg-gray-50 rounded-lg p-6 mb-6">
+                <div class="flex items-center gap-6">
+                  <div class="text-center">
+                    <div class="text-4xl font-bold text-gray-900">4.9</div>
+                    <div class="review-stars text-yellow-400 text-lg mb-1">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <div class="text-sm text-gray-600">124 reviews</div>
+                  </div>
+                  <div class="flex-1">
+                    <div class="space-y-2">
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-2">5</span>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <div class="flex-1 bg-gray-200 rounded-full h-2">
+                          <div
+                            class="bg-yellow-400 h-2 rounded-full"
+                            style="width: 85%;"
+                          ></div>
+                        </div>
+                        <span class="text-sm text-gray-600">85%</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-2">4</span>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <div class="flex-1 bg-gray-200 rounded-full h-2">
+                          <div
+                            class="bg-yellow-400 h-2 rounded-full"
+                            style="width: 12%;"
+                          ></div>
+                        </div>
+                        <span class="text-sm text-gray-600">12%</span>
+                      </div>
+                      <div class="flex items-center gap-2">
+                        <span class="text-sm w-2">3</span>
+                        <i class="fas fa-star text-yellow-400 text-xs"></i>
+                        <div class="flex-1 bg-gray-200 rounded-full h-2">
+                          <div
+                            class="bg-yellow-400 h-2 rounded-full"
+                            style="width: 3%;"
+                          ></div>
+                        </div>
+                        <span class="text-sm text-gray-600">3%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Individual Reviews -->
+              <div class="space-y-6">
+                <div class="border-b pb-6">
+                  <div class="flex items-start gap-4">
+                    <img
+                      src="/placeholder.svg?height=40&width=40"
+                      alt="Reviewer"
+                      class="w-10 h-10 rounded-full"
+                    />
+                    <div class="flex-1">
+                      <div class="flex items-center gap-2 mb-2">
+                        <h5 class="font-semibold">Alex Chen</h5>
+                        <div class="review-stars text-yellow-400 text-sm">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">2 days ago</span>
+                      </div>
+                      <p class="text-gray-700 leading-relaxed">
+                        Excellent book! Very comprehensive and easy to follow.
+                        The practical examples really helped me understand how
+                        to implement the strategies. Highly recommended for
+                        anyone starting in digital marketing.
+                      </p>
+                      <div
+                        class="flex items-center gap-4 mt-3 text-sm text-gray-500"
+                      >
+                        <button class="hover:text-blue-600">
+                          <i class="far fa-thumbs-up mr-1"></i> Helpful (12)
+                        </button>
+                        <button class="hover:text-red-600">
+                          <i class="far fa-flag mr-1"></i> Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="border-b pb-6">
+                  <div class="flex items-start gap-4">
+                    <img
+                      src="/placeholder.svg?height=40&width=40"
+                      alt="Reviewer"
+                      class="w-10 h-10 rounded-full"
+                    />
+                    <div class="flex-1">
+                      <div class="flex items-center gap-2 mb-2">
+                        <h5 class="font-semibold">Maria Rodriguez</h5>
+                        <div class="review-stars text-yellow-400 text-sm">
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                          <i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-sm text-gray-500">1 week ago</span>
+                      </div>
+                      <p class="text-gray-700 leading-relaxed">
+                        This book transformed my approach to digital marketing.
+                        The author's experience really shows, and the
+                        step-by-step guides are invaluable. Worth every penny!
+                      </p>
+                      <div
+                        class="flex items-center gap-4 mt-3 text-sm text-gray-500"
+                      >
+                        <button class="hover:text-blue-600">
+                          <i class="far fa-thumbs-up mr-1"></i> Helpful (8)
+                        </button>
+                        <button class="hover:text-red-600">
+                          <i class="far fa-flag mr-1"></i> Report
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-center mt-6">
+                <button class="text-blue-600 hover:text-blue-800 font-semibold">
+                  View All Reviews
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Books -->
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold mb-6">Related Books</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex gap-4">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Related Book"
+                  class="w-20 h-30 object-cover rounded"
+                />
+                <div class="flex-1">
+                  <h4 class="font-semibold mb-1">
+                    Social Media Marketing Mastery
+                  </h4>
+                  <p class="text-gray-600 text-sm mb-2">by John Smith</p>
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="text-yellow-400 text-sm">★★★★☆</div>
+                    <span class="text-gray-500 text-sm">(89)</span>
+                  </div>
+                  <span class="text-blue-600 font-semibold">$ 22</span>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <img
+                  src="./aset/image/Book.png"
+                  alt="Related Book"
+                  class="w-20 h-30 object-cover rounded"
+                />
+                <div class="flex-1">
+                  <h4 class="font-semibold mb-1">SEO Complete Guide</h4>
+                  <p class="text-gray-600 text-sm mb-2">by Lisa Wang</p>
+                  <div class="flex items-center gap-2 mb-2">
+                    <div class="text-yellow-400 text-sm">★★★★★</div>
+                    <span class="text-gray-500 text-sm">(156)</span>
+                  </div>
+                  <span class="text-blue-600 font-semibold">$ 28</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+      <div class="container mx-auto px-4">
+        <div class="text-center">
+          <p>&copy; 2024 E-Book Store. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function showTab(tabName) {
+        // Hide all tab contents
+        const tabContents = document.querySelectorAll(".tab-content");
+        tabContents.forEach((tab) => tab.classList.remove("active"));
+
+        // Remove active class from all tab buttons
+        const tabButtons = document.querySelectorAll(".tab-button");
+        tabButtons.forEach((button) => {
+          button.classList.remove("border-blue-600", "text-blue-600");
+          button.classList.add("border-transparent", "text-gray-500");
+        });
+
+        // Show selected tab content
+        document.getElementById(tabName).classList.add("active");
+
+        // Add active class to clicked button
+        event.target.classList.remove("border-transparent", "text-gray-500");
+        event.target.classList.add("border-blue-600", "text-blue-600");
+      }
+
+      function addToCart() {
+        alert("Book added to cart!");
+        // In real implementation, this would add the book to cart
+      }
+    </script>
+  </body>
+</html>
